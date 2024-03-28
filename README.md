@@ -6,6 +6,7 @@ Gommand is a simple command line tool that allows you to run commands in a struc
 Bootstraps the project
 ```sh
 go install github.com/joerdav/xc/cmd/xc@latest
+go install github.com/charmbracelet/gum@latest
 ```
 ### ShowEnv
 ```sh
