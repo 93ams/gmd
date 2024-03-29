@@ -59,7 +59,25 @@ func (b Binder) scan(c any, fs *pflag.FlagSet) []string {
 			required = append(required, name)
 		}
 		switch f.Type.Kind() {
-		case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:
+		case reflect.Uint8:
+			addFlag(name, alias, fieldVal, usage, fs.Uint8Var, fs.Uint8VarP)
+		case reflect.Uint16:
+			addFlag(name, alias, fieldVal, usage, fs.Uint16Var, fs.Uint16VarP)
+		case reflect.Uint32:
+			addFlag(name, alias, fieldVal, usage, fs.Uint32Var, fs.Uint32VarP)
+		case reflect.Uint64:
+			addFlag(name, alias, fieldVal, usage, fs.Uint64Var, fs.Uint64VarP)
+		case reflect.Uint:
+			addFlag(name, alias, fieldVal, usage, fs.UintVar, fs.UintVarP)
+		case reflect.Int8:
+			addFlag(name, alias, fieldVal, usage, fs.Int8Var, fs.Int8VarP)
+		case reflect.Int16:
+			addFlag(name, alias, fieldVal, usage, fs.Int16Var, fs.Int16VarP)
+		case reflect.Int32:
+			addFlag(name, alias, fieldVal, usage, fs.Int32Var, fs.Int32VarP)
+		case reflect.Int64:
+			addFlag(name, alias, fieldVal, usage, fs.Int64Var, fs.Int64VarP)
+		case reflect.Int:
 			addFlag(name, alias, fieldVal, usage, fs.IntVar, fs.IntVarP)
 		case reflect.String:
 			addFlag(name, alias, fieldVal, usage, fs.StringVar, fs.StringVarP)
